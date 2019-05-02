@@ -7,7 +7,8 @@
     "dev": "DEBUG=* nodemon --exec \"yarn start\"",
     "lint": "eslint ./src/ --ignore-path .gitignore",
     "test:integration": "NODE_ENV=test mocha --require babel-polyfill --require @babel/register src/integrationTests",
-    "seed": "babel-node ./seeds/testInit.js && rm -dR files && cp -R seeds/seederFiles files"
+    "seed": "babel-node ./seeds/testInit.js && rm -dR files && cp -R seeds/seederFiles files",
+    "docs": "apidoc -i src -o docs"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",

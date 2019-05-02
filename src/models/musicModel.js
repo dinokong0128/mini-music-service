@@ -1,6 +1,10 @@
 import mongoose from 'mongoose';
 import { NotFoundError } from 'restify-errors';
 
+/**
+ * Mongoose schema for Music
+ * @type {mongoose}
+ */
 const musicSchema = new mongoose.Schema({
   title: String,
   artist: String,
@@ -20,6 +24,9 @@ const musicSchema = new mongoose.Schema({
 
 musicSchema.set('toObject', { getters: true });
 
+/**
+ * static methods
+ */
 musicSchema.statics = {
   async get(id) {
     try {

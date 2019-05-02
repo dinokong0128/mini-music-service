@@ -1,6 +1,13 @@
 import { NotFoundError } from 'restify-errors';
 import Music from '../models/musicModel';
 
+/**
+ * GET /music/:id
+ * @param  req
+ * @param  res
+ * @param  {Function} next
+ * @return {Promise}
+ */
 const getCtrl = async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -14,6 +21,13 @@ const getCtrl = async (req, res, next) => {
   }
 };
 
+/**
+ * GET /music
+ * @param  req
+ * @param  res
+ * @param  {Function} next
+ * @return {Promise}
+ */
 const listCtrl = async (req, res, next) => {
   try {
     const musicList = await Music.search(req.query);
@@ -23,6 +37,13 @@ const listCtrl = async (req, res, next) => {
   }
 };
 
+/**
+ * POST /music
+ * @param  req
+ * @param  res
+ * @param  {Function} next
+ * @return {Promise}
+ */
 const postCtrl = async (req, res, next) => {
   try {
     return res.json(req.body);
@@ -31,6 +52,13 @@ const postCtrl = async (req, res, next) => {
   }
 };
 
+/**
+ * PUT /music/:id
+ * @param  req
+ * @param  res
+ * @param  {Function} next
+ * @return {Promise}
+ */
 const updateCtrl = async (req, res, next) => {
   try {
     return res.json(req.body);
@@ -39,6 +67,13 @@ const updateCtrl = async (req, res, next) => {
   }
 };
 
+/**
+ * DELETE /music/:id
+ * @param  req
+ * @param  res
+ * @param  {Function} next
+ * @return {Promise}
+ */
 const deleteCtrl = async (req, res, next) => {
   try {
     return res.json(req.params.id);
