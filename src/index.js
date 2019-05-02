@@ -5,29 +5,12 @@
 
 import debugLib from 'debug';
 import http from 'http';
+
 import app from './app';
+import connectMongoDB from './mongodb';
+import { port } from './config';
 
 const debug = debugLib('mini-music-service:server');
-
-/**
- * Normalize a port into a number, string, or false.
- */
-
-const normalizePort = (val) => {
-  const port = parseInt(val, 10);
-
-  if (Number.isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
-  return false;
-};
 
 /**
  * Event listener for HTTP server "error" event.
@@ -73,8 +56,13 @@ const onListening = () => {
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
+
+/**
+ * Create MongoDB connection
+ */
+
+connectMongoDB();
 
 /**
  * Create HTTP server.
