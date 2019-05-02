@@ -4,7 +4,7 @@ import Music from '../models/musicModel';
 const getCtrl = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const music = await Music.findBiId(id);
+    const music = await Music.get(id);
     if (music) {
       return res.json(music);
     }
