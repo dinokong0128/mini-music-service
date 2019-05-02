@@ -8,7 +8,7 @@ import http from 'http';
 
 import app from './app';
 import connectMongoDB from './mongodb';
-import { port } from './config';
+import { port } from '../config';
 
 const debug = debugLib('mini-music-service:server');
 

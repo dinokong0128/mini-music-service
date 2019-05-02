@@ -1,7 +1,7 @@
 import debugLib from 'debug';
 import mongoose from 'mongoose';
 
-import { mongoUri } from './config';
+import { mongoUri } from '../config';
 
 const debug = debugLib('mangodb');
 

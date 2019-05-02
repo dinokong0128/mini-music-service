@@ -1,7 +1,14 @@
+import { NotFoundError } from 'restify-errors';
+import Music from '../models/musicModel';
 
 const getCtrl = async (req, res, next) => {
   try {
-    return res.json(req.params.id);
+    const { id } = req.params;
+    const music = await Music.findBiId(id);
+    if (music) {
+      return res.json(music);
+    }
+    throw new NotFoundError(`could not find music with id ${id}.`);
   } catch (error) {
     return next(error);
   }
@@ -9,7 +16,8 @@ const getCtrl = async (req, res, next) => {
 
 const listCtrl = async (req, res, next) => {
   try {
-    return res.json(req.query);
+    const musicList = await Music.search(req.query);
+    return res.json(musicList);
   } catch (error) {
     return next(error);
   }
