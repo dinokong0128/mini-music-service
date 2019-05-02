@@ -5,7 +5,8 @@
   "scripts": {
     "start": "babel-node ./src/index.js",
     "dev": "DEBUG=* nodemon --exec \"yarn start\"",
-    "lint": "eslint ./src/ --ignore-path .gitignore"
+    "lint": "eslint ./src/ --ignore-path .gitignore",
+    "seed": "babel-node ./seeds/testInit.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -13,6 +14,7 @@
     "dotenv": "^7.0.0",
     "express": "~4.16.0",
     "mongoose": "^5.5.5",
+    "mongoose-seed": "^0.6.0",
     "morgan": "~1.9.0",
     "restify-errors": "^7.0.0"
   },

@@ -1,0 +1,19 @@
+[{
+  "model": "Music",
+  "documents": [
+    {
+      "title": "Amazing Grace",
+      "artist": "Elaine Johnson",
+      "album": "Hymn Serve",
+      "year": 2014,
+      "path": "files/AmazingGrace.mp3"
+    },
+    {
+      "title": "Blessed Assurance",
+      "artist": "Elaine Johnson",
+      "album": "Hymn Serve",
+      "year": 2014,
+      "path": "files/BlessedAssurance.mp3"
+    }
+  ]
+  }]

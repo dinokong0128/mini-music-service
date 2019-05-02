@@ -7,7 +7,7 @@ const musicSchema = new mongoose.Schema({
   year: {
     type: Number,
     min: 1700,
-    max: Date.getYear(),
+    max: new Date().getFullYear(),
   },
   path: {
     type: String,
